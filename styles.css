@@ -97,18 +97,32 @@ input.user-password:last-of-type {
 }
 
 /* Login Button Styling */
-.login-button {
-  width: 120px;
-  padding: 10px;
-  background-color: #007bff;
-  color: white;
-  font-size: 16px;
+button {
+  width: 9em;
+  height: 3em;
+  border-radius: 30em;
+  font-size: 15px;
+  font-family: inherit;
   border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.login-button:hover {
-  background-color: #0056b3;
-}
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+ }
+ 
+ button::before {
+  content: '';
+  width: 0;
+  height: 3em;
+  border-radius: 30em;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-image: linear-gradient(to right, #0fd850 0%, #f9f047 100%);
+  transition: .5s ease;
+  display: block;
+  z-index: -1;
+ }
+ 
+ button:hover::before {
+  width: 15em;
+ }
